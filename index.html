@@ -31,13 +31,6 @@
     #launchProxy {
       display: none;
     }
-    #secretFrame {
-      margin-top: 40px;
-      width: 100%;
-      height: 600px;
-      border: none;
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -51,7 +44,6 @@
     <div id="result"></div>
   </div>
 
-  <iframe id="secretFrame" src="https://edu-production-cd8e.up.railway.app/"></iframe>
   <button id="launchProxy">Launch Proxy</button>
 
   <script>
@@ -66,17 +58,13 @@
     }
 
     document.addEventListener("keydown", function (e) {
-      if (e.shiftKey && e.key.toLowerCase() === "p") {
+      if (e.shiftKey && e.key.toLowerCase() === "b") {
         const code = prompt("Enter access code:");
         if (code === "1020284") {
-          document.getElementById("secretFrame").style.display = "block";
+          document.getElementById("launchProxy").click();
         } else {
           alert("Incorrect code.");
         }
-      }
-
-      if (e.shiftKey && e.key.toLowerCase() === "b") {
-        document.getElementById("launchProxy").click();
       }
     });
 
