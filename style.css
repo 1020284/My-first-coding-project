@@ -7,80 +7,148 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  text-align: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Header */
-h1 {
+header h1 {
   font-size: 3em;
   margin-bottom: 10px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
 }
 
-p {
+.tagline {
   font-size: 1.2em;
-  margin-bottom: 40px;
   color: #e0e0e0;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Calculator container */
-.calculator {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
+/* Tool cards */
+.tool-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  margin: 30px auto;
   text-align: center;
+  animation: slideUp 1s ease-out;
+  transition: transform 0.3s ease;
 }
 
-/* Input field */
-input[type="text"] {
+.tool-card:hover {
+  transform: scale(1.02);
+}
+
+/* Inputs and selects */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
   width: 80%;
   padding: 12px;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   outline: none;
+  transition: background 0.3s ease;
 }
 
-/* Button styles */
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
 button {
   padding: 12px 24px;
   font-size: 16px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 198, 255, 0.5);
 }
 
-/* Result text */
-#result {
-  margin-top: 20px;
-  font-size: 20px;
+/* Results and outputs */
+#result,
+#clock,
+#randomResult,
+#unitResult {
+  margin-top: 10px;
+  font-size: 18px;
   color: #aaffaa;
 }
 
-/* Hidden proxy button */
-#launchProxy {
-  display: none;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Secret directory page styles (used in about:blank tab) */
+body.directory {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  text-align: center;
+}
+
+body.directory h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.directory ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+body.directory li {
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(0,198,255,0.3);
+}
+
+body.directory .coming-soon {
+  margin-top: 30px;
+  font-size: 1.1em;
+  color: #aaffaa;
 }
