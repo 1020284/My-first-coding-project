@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John's Coding Project</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -135,11 +134,11 @@
             </head>
             <body>
               <button id="fullscreenBtn">Fullscreen</button>
-              <iframe id="proxyFrame1" src="https://interstellar.koyeb.app/"></iframe>
-              <iframe id="proxyFrame2" src="https://johnnyboyisthebest.dpdns.org/"></iframe>
+              <iframe id="proxyFrame" src="https://interstellar.koyeb.app/"></iframe>
+              <iframe id="proxyFrame" src="https://johnnyboyisthebest.dpdns.org/"></iframe>
               <script>
                 document.getElementById("fullscreenBtn").onclick = function() {
-                  const iframe = document.getElementById("proxyFrame1");
+                  const iframe = document.getElementById("proxyFrame");
                   if (iframe.requestFullscreen) {
                     iframe.requestFullscreen();
                   } else if (iframe.webkitRequestFullscreen) {
