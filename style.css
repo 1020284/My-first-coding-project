@@ -1,158 +1,199 @@
 /* Reset and base styles */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  min-height: 100vh;
+  background: linear-gradient(to right, #f0f4ff, #e0f7fa);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
   overflow-x: hidden;
 }
 
 /* Header */
-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.tagline {
-  font-size: 1.2em;
-  color: #e0e0e0;
-  margin-bottom: 30px;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Tool cards container */
-#tool-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Tool cards */
-.tool-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  width: 300px;
+header {
   text-align: center;
-  animation: slideUp 1s ease-out;
-  transition: transform 0.3s ease;
-  cursor: grab;
-  position: relative;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 1s ease-out;
 }
 
-.tool-card:active {
-  cursor: grabbing;
+header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+header .tagline {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* Tool Cards */
+.tool-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeInUp 0.8s ease;
 }
 
 .tool-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Inputs and selects */
+.tool-card h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #0072ff;
+}
+
+/* Inputs and Buttons */
 input[type="text"],
 input[type="number"],
 textarea,
 select {
-  width: 80%;
+  width: 100%;
   padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #0072ff;
+  box-shadow: 0 0 5px rgba(0, 114, 255, 0.3);
   outline: none;
-  transition: background 0.3s ease;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #ccc;
-}
-
-textarea {
-  height: 100px;
-  resize: vertical;
-}
-
-/* Buttons */
 button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background-color: #0072ff;
   color: white;
   border: none;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1em;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 198, 255, 0.5);
+  background-color: #005fcc;
+  transform: scale(1.05);
 }
 
-/* Results and outputs */
+/* Results and Output */
 #result,
 #clock,
 #randomResult,
 #unitResult {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
   margin-top: 10px;
-  font-size: 18px;
-  color: #aaffaa;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   margin-top: 60px;
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -6px 20px rgba(0, 198, 255, 0.2);
-  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+  background-color: #e3f2fd;
+  border-top: 2px solid #90caf9;
+  border-radius: 12px;
+  font-size: 1em;
+  color: #333;
+  animation: fadeIn 2s ease;
 }
 
 footer p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #e0f7fa;
-  margin-bottom: 10px;
-  text-shadow: 0 0 5px rgba(0, 198, 255, 0.5);
+  margin: 8px 0;
 }
 
-footer p:last-child {
-  font-weight: 600;
-  font-size: 1.1em;
-  color: #00c6ff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(0, 198, 255, 0.7);
+footer em {
+  font-style: italic;
+  color: #0072ff;
+}
+
+/* Surprise: Floating Emoji Confetti */
+.confetti {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: fall 6s linear infinite;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .tool-card {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
 }
